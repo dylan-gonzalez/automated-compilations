@@ -4,13 +4,13 @@ import random
 # SEE https://github.com/davidteather/TikTok-Api/issues/311#issuecomment-721164493
 
 # Starts TikTokApi
-api = TikTokApi.get_instance()
+api = TikTokApi.get_instance(use_test_endpoints = False)
 
 # This is generating the tt_webid_v2 cookie
 # need to pass it to methods you want to download
 device_id = api.generate_device_id()
 
-tiktoks = api.by_trending(custom_device_id=device_id, count = 10)
+tiktoks = api.by_trending(custom_device_id=device_id)
 # tiktoks = api.by_hashtag("funny", count = 10, custom_device_id = device_id)
 
 # Below is if the method used if you have the full tiktok object
